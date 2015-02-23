@@ -1,0 +1,32 @@
+<!-- PUBLIC -->
+
+<template name="publicPostList">
+
+   <section id="portfolio" style="background:#33ADFF">
+
+
+  <div  class="wellnessIndex">
+      <p style="font-size:4ex">
+          Community posts:
+      </p>
+  </div>
+
+  <div class="posts" style="border:none">
+    
+      <!-- {{#if ownPost}} -->
+      {{#each posts}}
+        {{> postItem}}
+      {{/each}}
+      <!-- {{/if}} -->
+ 
+    
+    {{#if nextPath}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
+    {{else}}
+      {{#unless ready}}
+        {{> spinner}}
+      {{/unless}}
+    {{/if}}
+  </div>
+</section>
+</template>

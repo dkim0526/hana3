@@ -1,0 +1,22 @@
+<template name="postItem">
+  
+  <div class="post" {{attributes}}>
+     <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a> 
+    <div class="post-content" style="width: 100%;">
+     
+      <div class="iframe-container" style="float:left; width: 50%;">
+        <img class="img-responsive" width="560" height="315" src="{{url}}" alt="">
+      </div>
+      
+      <div class="post-description" style="float:right; width: 50%; padding: 2%">
+        <div style="text-align:left">       
+          <h2>{{title}}</h2>
+          <p> {{submitted}} {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">   Edit</a>{{/if}}      </p>
+          <p>{{pluralize votes "Vote"}}, submitted by {{author}} </p>
+          <p> Description: {{description}} </p>
+        </div>
+      </div>
+    </div>
+     <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">View Post</a> 
+  </div>
+</template>

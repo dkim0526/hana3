@@ -1,0 +1,33 @@
+<!-- PRIVATE -->
+
+<template name="postsList">
+
+   <section id="portfolio" style="background:#33ADFF">
+
+
+  <div  class="wellnessIndex">
+      <p style="font-size:4ex">
+          You have completed {{numPosts}} challenges!
+      </p>
+      <svg height="300" width="300" x>
+        <circle cx="150" cy="150" r="150" stroke="none" stroke-width="3" fill={{indexColor}} />
+      </svg>
+  </div>
+
+  <div class="posts" style="border:none">
+    {{#each postsWithRank}}
+      {{#if ownPost}} 
+        {{> postItem}}
+      {{/if}} 
+    {{/each}}
+    
+    {{#if nextPath}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
+    {{else}}
+      {{#unless ready}}
+        {{> spinner}}
+      {{/unless}}
+    {{/if}}
+  </div>
+</section>
+</template>

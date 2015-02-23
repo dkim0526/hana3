@@ -1,0 +1,98 @@
+.blueResponsive{
+  background-color: #00CC66;
+    color:#FFFFFF;
+}
+a.blueResponsive, .blueResponsive:hover{
+  background-color:#00B95C;
+  color:#FFFFFF;
+}
+
+
+.buttonl {
+    cursor: pointer;
+    background: #2ecc71;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+    transition: 0.2s linear;
+    }
+    
+    .buttonl:hover {
+      background: #27ae60;
+    }
+  
+
+
+.center-div {
+  text-align:center;
+}
+
+.h4Text {
+  margin-top: -40px;
+  text-decoration: none;
+  text-align:center;
+  display: inline-block;
+  position: relative;
+}
+#portfolio .portfolio-item .portfolio-caption{
+
+  padding:10px;
+}
+#portfolio .portfolio-item .portfolio-caption .h4Text{
+  margin-top: -40px;
+
+}
+
+.textSizeTwenty{
+font-size:20px;
+}
+
+a#signup-link.pull-right{
+  text-align: center;
+margin-top:5px;
+padding:6px 12px;
+font-size:14px;
+border-radius:4px;
+width:100%;
+display:block;
+color:#fff;
+border-color:#4cae4c;
+background:#4cae4c;
+text-decoration: none
+}
+
+
+a#signup-link.pull-right:hover{
+    text-align: center;
+  margin-top:5px;
+padding:6px 12px;
+font-size:14px;
+border-radius:4px;
+width:100%;
+display:block;
+background:#389438;
+border-color:#389438;
+color:#fff;
+text-decoration: none
+
+}
+
+  .fullBackground{
+        background: url(img/bg1.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+         background-size: cover;
+     }
+
+     .cursorDefault{cursor:default;}

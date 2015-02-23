@@ -1,0 +1,15 @@
+<template name="userPage">
+   <section id="portfolio">
+  <div>
+  <h1> Welcome to the user page! </h1>
+  </div>
+
+  
+  <div class="posts">
+    {{#each post}}
+      {{> postItem}}
+    {{/each}}
+  </div> 
+</section>
+
+</template>
