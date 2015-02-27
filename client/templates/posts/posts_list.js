@@ -12,21 +12,36 @@ Template.postsList.helpers({
 
   indexColor: function(){
 
-  	// latestPosts = Posts.find({}, {sort: {createdAt: -1}, limit: 2});
+    //The .fetch() is necessary to receive the array
+  	latestPost = Posts.find({userId: Meteor.userId()}, {sort: {submitted: -1}, limit: 1}).fetch();
 
-  	postCount = Posts.find().count();
+  	postCount = Posts.find({userId: Meteor.userId()}).count();
 
-  	console.log(postCount);
+  	console.log(latestPost[0].submitted.getTime());
+
+    lastPostTime = latestPost[0].submitted.getTime();
+
+    test = new Date();
+
+    nowTime = test.getTime();
+
+    difference = nowTime - lastPostTime;
+
+    //Take the modulus which will allow us to compare times over 10 mins
+    // 10 mins chosen for the demo-ing time
+    difference = difference % 600000;
+
+    console.log(difference);
 
   	switch(true)
   	{
-  		case (postCount > 4):
+  		case (difference < 6000):
   			return "#7DBD7D";
   			break;
-  		case (postCount > 2):
+  		case (difference < 12000):
   			return "#FFDE59";
   			break;
-  		case (postCount > 0):
+  		case (difference < 18000):
   			return "#FFAD5C";
   			break;
   		default:
@@ -37,7 +52,8 @@ Template.postsList.helpers({
   },
 
   numPosts: function(){
-    return Posts.find().count();
+    // return Posts.find().count();
+    return Posts.find({userId: Meteor.userId()}).count();
   }
 
 });

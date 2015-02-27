@@ -1,5 +1,10 @@
 <!-- PRIVATE -->
 
+<!-- Auto-refresh is a bad solution for a dynamically updating color thing -->
+<!-- <head>
+  <meta http-equiv="refresh" content="5" >
+</head> --> 
+
 <template name="postsList">
 
    <section id="portfolio" style="background:#33ADFF">
@@ -10,8 +15,9 @@
           You have completed {{numPosts}} challenges!
       </p>
       <svg height="300" width="300" x>
-        <circle cx="150" cy="150" r="150" stroke="none" stroke-width="3" fill={{indexColor}} />
+        <circle id="indexCircle" cx="150" cy="150" r="150" stroke="none" stroke-width="3" fill={{indexColor}} />
       </svg>
+
   </div>
 
   <div class="posts" style="border:none">
