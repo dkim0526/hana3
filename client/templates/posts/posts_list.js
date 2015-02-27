@@ -13,11 +13,11 @@ Template.postsList.helpers({
   indexColor: function(){
 
     //The .fetch() is necessary to receive the array
-  	latestPost = Posts.find({userId: Meteor.userId()}, {sort: {submitted: -1}, limit: 1}).fetch();
+    latestPost = Posts.find({userId: Meteor.userId()}, {sort: {submitted: -1}, limit: 1}).fetch();
 
-  	postCount = Posts.find({userId: Meteor.userId()}).count();
+    postCount = Posts.find({userId: Meteor.userId()}).count();
 
-  	console.log(latestPost[0].submitted.getTime());
+    console.log(latestPost[0].submitted.getTime());
 
     lastPostTime = latestPost[0].submitted.getTime();
 
@@ -33,21 +33,21 @@ Template.postsList.helpers({
 
     console.log(difference);
 
-  	switch(true)
-  	{
-  		case (difference < 6000):
-  			return "#7DBD7D";
-  			break;
-  		case (difference < 12000):
-  			return "#FFDE59";
-  			break;
-  		case (difference < 18000):
-  			return "#FFAD5C";
-  			break;
-  		default:
-  			return "#D14719";
-  			break;
-  	}
+    switch(true)
+    {
+      case (difference < 6000):
+        return "#7DBD7D";
+        break;
+      case (difference < 12000):
+        return "#FFDE59";
+        break;
+      case (difference < 18000):
+        return "#FFAD5C";
+        break;
+      default:
+        return "#D14719";
+        break;
+    }
 
   },
 

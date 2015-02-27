@@ -1,5 +1,5 @@
 <template name="header">
-  <nav class="navbar navbar-default navbar navbar-fixed-top" role="navigation" style="margin-bottom:0px; padding-top:2px;padding-bottom:2px;background:#222; border-radius:0px">
+  <nav class="navbar navbar-default navbar navbar-fixed-top" role="navigation" style="margin-bottom:0px; padding-top:2px;padding-bottom:2px;background:#222; border-radius:0px;">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
@@ -15,25 +15,29 @@
 <!--           <li class="{{activeRouteClass  'bestPosts'}}">
             <a href="{{pathFor 'bestPosts'}}">Best</a>
           </li> -->
+
+             <li class="{{activeRouteClass 'addChallenge'}}">
+              <a href="{{pathFor 'addChallenge'}}">Challenge Inspirations</a>
+            </li>
+
+            <li class="{{activeRouteClass 'bestPosts'}}">
+            <a href="{{pathFor 'bestPosts'}}">Community</a>
+          </li>
           {{#if currentUser}}
+
           <li class="{{activeRouteClass 'newPosts'}}">
-            <a href="{{pathFor 'newPosts'}}">Challenge Report</a>
+            <a href="{{pathFor 'newPosts'}}">Profile</a>
           </li>
 
-          <li class="{{activeRouteClass 'bestPosts'}}">
-            <a href="{{pathFor 'bestPosts'}}">All Challenges</a>
-          </li>
 
             <li class="{{activeRouteClass 'postSubmit'}}">
               <a href="{{pathFor 'postSubmit'}}">Add A Challenge</a>
-            </li>
-            <li class="{{activeRouteClass 'addChallenge'}}">
-              <a href="{{pathFor 'addChallenge'}}">Challenge Inspirations</a>
             </li>
             <li class="dropdown">
               {{> notifications}}
             </li>
           {{/if}}
+
           <li class="{{activeRouteClass  'aboutPage'}}">
             <a href="{{pathFor 'aboutPage'}}">About Us</a>
           </li>
